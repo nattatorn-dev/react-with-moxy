@@ -4,6 +4,11 @@ import Helmet from 'react-helmet';
 import styles from './InternalError.css';
 
 class InternalError extends PureComponent {
+    static propTypes = {
+        err: PropTypes.object,
+        serverContext: PropTypes.object,
+    };
+
     componentWillMount() {
         // Set status code to 500
         this.props.serverContext && this.props.serverContext.res.status(500);
@@ -31,10 +36,5 @@ class InternalError extends PureComponent {
         );
     }
 }
-
-InternalError.propTypes = {
-    err: PropTypes.object,
-    serverContext: PropTypes.object,
-};
 
 export default InternalError;

@@ -7,6 +7,10 @@ import styles from './App.css';
 import { default as buildPageRoutes } from './pages/buildRoutes';
 
 class App extends PureComponent {
+    static propTypes = {
+        children: PropTypes.element,
+    };
+
     render() {
         const { children } = this.props;
 
@@ -27,10 +31,6 @@ class App extends PureComponent {
         );
     }
 }
-
-App.propTypes = {
-    children: PropTypes.element,
-};
 
 export function buildRoutes() {
     return {

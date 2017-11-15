@@ -4,6 +4,10 @@ import Helmet from 'react-helmet';
 import styles from './NotFound.css';
 
 class NotFound extends PureComponent {
+    static propTypes = {
+        serverContext: PropTypes.object,
+    };
+
     componentWillMount() {
         // Set status code to 404
         this.props.serverContext && this.props.serverContext.res.status(404);
@@ -23,9 +27,5 @@ class NotFound extends PureComponent {
         );
     }
 }
-
-NotFound.propTypes = {
-    serverContext: PropTypes.object,
-};
 
 export default NotFound;

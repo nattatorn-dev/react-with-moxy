@@ -8,6 +8,10 @@ import moxySvg from 'shared/media/images/logos/moxy-square.inline.svg';
 import styles from './Header.css';
 
 class Header extends PureComponent {
+    static propTypes = {
+        className: PropTypes.string,
+    };
+
     render() {
         const { className } = this.props;
         const headerClass = classNames(`${styles.header}`, `${className}`);
@@ -22,9 +26,5 @@ class Header extends PureComponent {
         );
     }
 }
-
-Header.propTypes = {
-    className: PropTypes.string,
-};
 
 export default Header;

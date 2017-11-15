@@ -5,6 +5,11 @@ import SvgInlineReact from 'svg-inline-react';
 import styles from './Svg.css';
 
 class SvgInline extends PureComponent {
+    static propTypes = {
+        svg: PropTypes.string.isRequired,
+        className: PropTypes.string,
+    };
+
     render() {
         const { className, svg, ...props } = this.props;
 
@@ -13,10 +18,5 @@ class SvgInline extends PureComponent {
         );
     }
 }
-
-SvgInline.propTypes = {
-    svg: PropTypes.string.isRequired,
-    className: PropTypes.string,
-};
 
 export default SvgInline;

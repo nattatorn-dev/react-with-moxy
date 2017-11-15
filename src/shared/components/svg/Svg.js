@@ -6,6 +6,12 @@ import styles from './Svg.css';
 // See: https://github.com/Karify/external-svg-sprite-loader
 
 class Svg extends PureComponent {
+    static propTypes = {
+        svg: PropTypes.object.isRequired,
+        title: PropTypes.string,
+        className: PropTypes.string,
+    };
+
     render() {
         const { svg, className, title, ...props } = this.props;
 
@@ -19,11 +25,5 @@ class Svg extends PureComponent {
         );
     }
 }
-
-Svg.propTypes = {
-    svg: PropTypes.object.isRequired,
-    title: PropTypes.string,
-    className: PropTypes.string,
-};
 
 module.exports = Svg;
